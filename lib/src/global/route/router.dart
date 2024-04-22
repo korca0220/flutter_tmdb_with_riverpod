@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tmdb_movie/src/feature/favorites/presentation/favorites_screen.dart';
+import 'package:tmdb_movie/src/feature/movies/domain/entity/tmdb_movie.dart';
 import 'package:tmdb_movie/src/feature/movies/presentation/movie_detail/movie_detail_screen.dart';
 import 'package:tmdb_movie/src/feature/movies/presentation/movies/movie_search_screen.dart';
 import 'package:tmdb_movie/src/global/route/main_navigation.dart';
@@ -43,12 +44,19 @@ final goRouterProvider = Provider((ref) {
                       path: ':id',
                       name: AppRoute.movie.name,
                       pageBuilder: (context, state) {
-                        // final id = int.parse(state.pathParameters['id'] as String);
-                        // final movie = state.extra
+                        final id =
+                            int.parse(state.pathParameters['id'] as String);
+                        final movie = state.extra is TMDBMovie
+                            ? state.extra as TMDBMovie
+                            : null;
 
                         return MaterialPage(
-                            key: state.pageKey,
-                            child: const MovieDetailScreen());
+                          key: state.pageKey,
+                          child: MovieDetailScreen(
+                            movieId: id,
+                            movie: movie,
+                          ),
+                        );
                       },
                     ),
                   ],

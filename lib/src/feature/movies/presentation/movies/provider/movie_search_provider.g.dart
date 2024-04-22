@@ -7,7 +7,7 @@ part of 'movie_search_provider.dart';
 // **************************************************************************
 
 String _$movieSearchNotifierHash() =>
-    r'd0abcbbaa2262f291ce6ba9d1c056b49a68a1210';
+    r'b82c67ea4bc06a784cb9eb4718f482b76d816a95';
 
 /// See also [MovieSearchNotifier].
 @ProviderFor(MovieSearchNotifier)
