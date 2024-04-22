@@ -41,7 +41,7 @@ class ScaffoldWithNavigationBar extends StatelessWidget {
   const ScaffoldWithNavigationBar({
     super.key,
     required this.body,
-    required this.currentIndex,
+    required this.currentIndex, 
     required this.onDestinationSelected,
   });
   final Widget body;

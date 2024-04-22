@@ -17,7 +17,11 @@ class MyApp extends ConsumerWidget {
       routerConfig: goRouter,
       title: 'TMDB Movie',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark().copyWith(
+        appBarTheme: const AppBarTheme().copyWith(
+          elevation: 0.0,
+        ),
+      ),
     );
   }
 }
