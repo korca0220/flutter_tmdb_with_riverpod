@@ -10,6 +10,7 @@ class TMDBMovie with _$TMDBMovie {
   factory TMDBMovie({
     required int id,
     required String title,
+    String? overview,
     @JsonKey(name: 'poster_path') String? posterPath,
     @JsonKey(name: 'release_date') String? releaseDate,
   }) = _TMDBMovieBasic;

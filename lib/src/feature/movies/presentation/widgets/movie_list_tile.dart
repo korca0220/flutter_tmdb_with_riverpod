@@ -28,10 +28,12 @@ class MovieListTile extends StatelessWidget {
           children: [
             Stack(
               children: [
-                const SizedBox(
+                SizedBox(
                   width: posterHeight * MoviePoster.width / MoviePoster.height,
                   height: posterHeight,
-                  child: MoviePoster(),
+                  child: MoviePoster(
+                    imagePath: movie.posterPath,
+                  ),
                 ),
                 if (debugIndex != null) ...[
                   const Positioned.fill(
@@ -54,11 +56,11 @@ class MovieListTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Movie Title',
+                    movie.title,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const Gap(8),
-                  const Text('Released: 2024-02-22'),
+                  Text('Released: ${movie.releaseDate}'),
                 ],
               ),
             )

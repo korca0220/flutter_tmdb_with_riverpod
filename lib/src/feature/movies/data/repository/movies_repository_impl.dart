@@ -17,8 +17,10 @@ final class MoviesRepositoryImpl implements MoviesRepository {
   final MoviesRemoteDataSource remoteDataSource;
 
   @override
-  Future<TMDBMovie> movie(
-      {required int movieId, CancelToken? cancelToken}) async {
+  Future<TMDBMovie> movie({
+    required int movieId,
+    CancelToken? cancelToken,
+  }) async {
     final result = await remoteDataSource.getMovies(
       movieId: movieId,
       cancelToken: cancelToken,

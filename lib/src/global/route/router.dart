@@ -52,7 +52,7 @@ final goRouterProvider = Provider((ref) {
 
                         return MaterialPage(
                           key: state.pageKey,
-                          child: MovieDetailScreen(
+                          child: MovieDetailsScreen(
                             movieId: id,
                             movie: movie,
                           ),

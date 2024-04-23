@@ -22,6 +22,7 @@ TMDBMovie _$TMDBMovieFromJson(Map<String, dynamic> json) {
 mixin _$TMDBMovie {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  String? get overview => throw _privateConstructorUsedError;
   @JsonKey(name: 'poster_path')
   String? get posterPath => throw _privateConstructorUsedError;
   @JsonKey(name: 'release_date')
@@ -41,6 +42,7 @@ abstract class $TMDBMovieCopyWith<$Res> {
   $Res call(
       {int id,
       String title,
+      String? overview,
       @JsonKey(name: 'poster_path') String? posterPath,
       @JsonKey(name: 'release_date') String? releaseDate});
 }
@@ -60,6 +62,7 @@ class _$TMDBMovieCopyWithImpl<$Res, $Val extends TMDBMovie>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? overview = freezed,
     Object? posterPath = freezed,
     Object? releaseDate = freezed,
   }) {
@@ -72,6 +75,10 @@ class _$TMDBMovieCopyWithImpl<$Res, $Val extends TMDBMovie>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      overview: freezed == overview
+          ? _value.overview
+          : overview // ignore: cast_nullable_to_non_nullable
+              as String?,
       posterPath: freezed == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
@@ -95,6 +102,7 @@ abstract class _$$TMDBMovieBasicImplCopyWith<$Res>
   $Res call(
       {int id,
       String title,
+      String? overview,
       @JsonKey(name: 'poster_path') String? posterPath,
       @JsonKey(name: 'release_date') String? releaseDate});
 }
@@ -112,6 +120,7 @@ class __$$TMDBMovieBasicImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? overview = freezed,
     Object? posterPath = freezed,
     Object? releaseDate = freezed,
   }) {
@@ -124,6 +133,10 @@ class __$$TMDBMovieBasicImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      overview: freezed == overview
+          ? _value.overview
+          : overview // ignore: cast_nullable_to_non_nullable
+              as String?,
       posterPath: freezed == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
@@ -142,6 +155,7 @@ class _$TMDBMovieBasicImpl implements _TMDBMovieBasic {
   _$TMDBMovieBasicImpl(
       {required this.id,
       required this.title,
+      this.overview,
       @JsonKey(name: 'poster_path') this.posterPath,
       @JsonKey(name: 'release_date') this.releaseDate});
 
@@ -153,6 +167,8 @@ class _$TMDBMovieBasicImpl implements _TMDBMovieBasic {
   @override
   final String title;
   @override
+  final String? overview;
+  @override
   @JsonKey(name: 'poster_path')
   final String? posterPath;
   @override
@@ -161,7 +177,7 @@ class _$TMDBMovieBasicImpl implements _TMDBMovieBasic {
 
   @override
   String toString() {
-    return 'TMDBMovie(id: $id, title: $title, posterPath: $posterPath, releaseDate: $releaseDate)';
+    return 'TMDBMovie(id: $id, title: $title, overview: $overview, posterPath: $posterPath, releaseDate: $releaseDate)';
   }
 
   @override
@@ -171,6 +187,8 @@ class _$TMDBMovieBasicImpl implements _TMDBMovieBasic {
             other is _$TMDBMovieBasicImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.overview, overview) ||
+                other.overview == overview) &&
             (identical(other.posterPath, posterPath) ||
                 other.posterPath == posterPath) &&
             (identical(other.releaseDate, releaseDate) ||
@@ -180,7 +198,7 @@ class _$TMDBMovieBasicImpl implements _TMDBMovieBasic {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, title, posterPath, releaseDate);
+      Object.hash(runtimeType, id, title, overview, posterPath, releaseDate);
 
   @JsonKey(ignore: true)
   @override
@@ -201,6 +219,7 @@ abstract class _TMDBMovieBasic implements TMDBMovie {
   factory _TMDBMovieBasic(
           {required final int id,
           required final String title,
+          final String? overview,
           @JsonKey(name: 'poster_path') final String? posterPath,
           @JsonKey(name: 'release_date') final String? releaseDate}) =
       _$TMDBMovieBasicImpl;
@@ -212,6 +231,8 @@ abstract class _TMDBMovieBasic implements TMDBMovie {
   int get id;
   @override
   String get title;
+  @override
+  String? get overview;
   @override
   @JsonKey(name: 'poster_path')
   String? get posterPath;
